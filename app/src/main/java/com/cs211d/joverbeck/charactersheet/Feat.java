@@ -22,7 +22,7 @@ public class Feat
     }
 
     public Feat(String fromStr){
-        fromStr.split("|");
+        this(fromStr.split("|")[0], fromStr.split("|")[1]);
     }
 
     public String toString(){

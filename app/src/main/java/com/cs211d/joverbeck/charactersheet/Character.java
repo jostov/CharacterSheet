@@ -12,16 +12,10 @@ package com.cs211d.joverbeck.charactersheet;
 
 public class Character
 {
-    //Array of DB items
-    String[] contents;
-    //
-    //
-    //
-    //
-
-    Feats[] feats;
-    Skills[] proficiencies;
-    Integer[] values;
+    String[] stats;
+    Feat[] feats;
+    Skill[] knownSkills;
+    Integer[] statValues;
     Spell[] spells;
     Item[] Inventory;
 }

@@ -16,11 +16,13 @@ public class Item
     String equippable;
     String weight;
     String value;
-    public Item(String desc, String equ, String wei, String val){
+    String name;
+    public Item(String desc, String equ, String wei, String val, String nam){
         description = checkInput(desc);
         equippable = checkInput(equ);
         weight = checkInput(wei);
         value = checkInput(val);
+        name = checkInput(nam)
     }
     public Item(String stringRep){
         String[] split = stringRep.split("|");
@@ -28,6 +30,7 @@ public class Item
         equippable = split[1];
         weight = split[2];
         value = split[3];
+        name = split[4];
     }
 
     public String toString(){

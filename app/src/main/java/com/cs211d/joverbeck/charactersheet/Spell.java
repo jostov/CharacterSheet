@@ -16,17 +16,19 @@ public class Spell
     int time;
     int range;
     int duration;
+    String spellName;
     String durationMagnitude;
     String rangeMagnitude;
     String timeMagnitude;
     String components;
     String description;
 
-    public Spell(int lvl, int tme, int rnge, int dura, String duraMag, String rngMag, String tmeMag, String comps, String dscr){
+    public Spell(int lvl, int tme, int rnge, int dura, String name, String duraMag, String rngMag, String tmeMag, String comps, String dscr){
         level = lvl;
         time = tme;
         range = rnge;
         duration = dura;
+        spellName = checkInput(name);
         durationMagnitude = checkInput(duraMag);
         rangeMagnitude = checkInput(rngMag);
         timeMagnitude = checkInput(tmeMag);
@@ -39,11 +41,12 @@ public class Spell
         time = Integer.parseInt(safe[1]);
         range = Integer.parseInt(safe[2]);
         duration = Integer.parseInt(safe[3]);
-        durationMagnitude = safe[4];
-        rangeMagnitude = safe[5];
-        timeMagnitude = safe[6];
-        components = safe[7];
-        description = safe[8];
+        spellName = safe[4];
+        durationMagnitude = safe[5];
+        rangeMagnitude = safe[6];
+        timeMagnitude = safe[7];
+        components = safe[8];
+        description = safe[9];
 }
     //inputSanity
     public String checkInput(String unsafe){
@@ -67,6 +70,7 @@ public class Spell
                 + time + semiSep
                 + range + semiSep
                 + duration + semiSep
+                + spellName + semiSep
                 + durationMagnitude + semiSep
                 + rangeMagnitude + semiSep
                 + timeMagnitude + semiSep
@@ -114,6 +118,14 @@ public class Spell
     public void setDuration(int duration)
     {
         this.duration = duration;
+    }
+
+    public String getSpellName() {
+        return spellName;
+    }
+
+    public void setSpellName(String spellName) {
+        this.spellName = spellName;
     }
 
     public String getDurationMagnitude()
